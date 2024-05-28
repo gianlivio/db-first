@@ -1,0 +1,14 @@
+CREATE TABLE autousate (
+    id              UNSIGNED AUTO_INCREMENT PRIMARY KEY,   -- Identificatore univoco per ogni auto, auto incrementato per garantire unicità e evitare valori negativi
+    marca           VARCHAR(50) NOT NULL,                 
+    modello         VARCHAR(50) NOT NULL,              
+    anno            YEAR NOT NULL,                         -- tipo YEAR per gestire gli anni in formato YYYY
+    chilometraggio  INT UNSIGNED NOT NULL,                 -- numero intero non negativo
+    prezzo          DECIMAL(10, 2) NOT NULL,               -- numero decimale per precisione monetaria
+    colore          VARCHAR(30) NOT NULL,                  
+    carburante      ENUM('Benzina', 'Diesel', 'GPL', 'Metano', 'Elettrico', 'Ibrido') NOT NULL, --ENUM per valori predefiniti
+    cilindrata      SMALLINT UNSIGNED       NOT NULL,      -- Cilindrata in cc, numero intero piccolo non negativo
+    porte           TINYINT UNSIGNED        NOT NULL,      -- numero intero molto piccolo non negativo
+    descrizione     MEDIUMTEXT,                            -- testo di lunghezza variabile per info dettagliate
+    disponibilita   BOOLEAN      NOT NULL DEFAULT TRUE     -- BOOLEANO true (disponibile) o false (venduta)
+);
